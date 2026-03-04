@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Question</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, pink, purple);
+  font-family: Arial;
+}
+
+.box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yes {
+  background: hotpink;
+  color: white;
+}
+
+#no {
+  background: gray;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>i love u muwahhh 💋</h2>
+  <button id="yes" onclick="yesClick()">i love u too muwahhh</button>
+  <button id="no" onclick="noClick()">NO</button>
+</div>
+
+<script>
+let noCount = 0;
+
+function noClick() {
+  noCount++;
+  let noBtn = document.getElementById("no");
+  let size = 1 - (noCount * 0.15);
+  if (size < 0.2) size = 0.2;
+  noBtn.style.transform = "scale(" + size + ")";
+}
+
+function yesClick() {
+  document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(to right,pink,purple);font-family:Arial;">
+      <div style="background:white;padding:40px;border-radius:20px;text-align:center;">
+        <h1>I knew it 😌💖</h1>
+      </div>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
